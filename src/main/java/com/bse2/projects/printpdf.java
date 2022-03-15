@@ -9,8 +9,23 @@ import com.mysql.cj.xdevapi.Table;
 
 import java.io.FileOutputStream;
 import java.util.Scanner;
+import  com.itextpdf.text.Paragraph;
+import com.itextpdf.text.Chapter;
+import com.itextpdf.text.Font;
+import com.itextpdf.text.BadElementException;
+import com.itextpdf.text.DocumentException;
+import com.itextpdf.text.Phrase;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+// used to read a pdf document
+import com.itextpdf.text.Element;
+import com.itextpdf.text.FontFactory;
+import com.itextpdf.text.Image;
+import com.itextpdf.text.Section;
+import com.itextpdf.text.pdf.CMYKColor;
+
+
 public class printpdf {
-    Tableviewupdate mytable = new Tableviewupdate();
     public void pdf(){
         Document document = new Document();
         Scanner filename = new Scanner(System.in);
@@ -20,7 +35,7 @@ public class printpdf {
         {
             PdfWriter writer = PdfWriter.getInstance(document, new FileOutputStream(infilename+".pdf"));
             document.open();
-            document.add(new Tableviewupdate().data.size());
+            document.add(new Paragraph("HHHHH"));
             //Set attributes here
             document.addAuthor("Tumutech");
             document.addCreationDate();
