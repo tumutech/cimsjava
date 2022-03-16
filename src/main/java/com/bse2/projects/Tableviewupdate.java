@@ -18,7 +18,7 @@ public class Tableviewupdate extends dbConnect{
     public ArrayList<String> tablecol = new ArrayList<String>();
     int queryno;
     String tcols;
-    public void columns(TableView tableview,String myquery) {
+    public TableView columns(TableView tableview,String myquery) {
         data = FXCollections.observableArrayList();
         try {
             String SQL = myquery;
@@ -58,5 +58,6 @@ public class Tableviewupdate extends dbConnect{
         } catch (SQLException e) {
             e.printStackTrace();
         }
+        return tableview;
     }
     }

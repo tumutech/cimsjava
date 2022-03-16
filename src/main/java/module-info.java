@@ -4,6 +4,8 @@ module com.bse2.projects {
     requires java.sql;
     requires mysql.connector.java;
     requires itextpdf;
+    requires layout;
+    requires kernel;
 
 
     opens com.bse2.projects to javafx.fxml;

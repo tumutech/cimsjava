@@ -23,6 +23,7 @@ import com.itextpdf.text.FontFactory;
 import com.itextpdf.text.Image;
 import com.itextpdf.text.Section;
 import com.itextpdf.text.pdf.CMYKColor;
+import com.itextpdf.layout.element.*;
 
 
 public class printpdf {
@@ -35,7 +36,19 @@ public class printpdf {
         {
             PdfWriter writer = PdfWriter.getInstance(document, new FileOutputStream(infilename+".pdf"));
             document.open();
-            document.add(new Paragraph("HHHHH"));
+            Paragraph header = new Paragraph("Church Information");
+            Paragraph churchinfo = new Paragraph("Church Name:");
+            Paragraph address = new Paragraph("P.O.BOX");
+            Paragraph city = new Paragraph("City:");
+            //formarting
+            churchinfo.setAlignment(Paragraph.ALIGN_CENTER);
+            address.setAlignment(Paragraph.ALIGN_RIGHT);
+            address.setAlignment(Paragraph.ALIGN_RIGHT);
+            Chapter headersection = new Chapter(header,1);
+            headersection.add(churchinfo);
+            headersection.add(address);
+            document.add(headersection);
+
             //Set attributes here
             document.addAuthor("Tumutech");
             document.addCreationDate();
@@ -50,4 +63,5 @@ public class printpdf {
             e.printStackTrace();
         }
     }
+
 }
